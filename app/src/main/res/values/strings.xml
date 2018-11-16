@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">sviridov</string>
+
+    <string name="stub" translatable="false"/>
 </resources>
