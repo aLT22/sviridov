@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
+        android:paddingBottom="8dp"
+        android:layout_margin="8dp">
+
+    <TextView
+            android:id="@+id/city"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            tools:text="London"
+            android:layout_margin="8dp"
+            android:layout_width="wrap_content"
+            android:textSize="24sp"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:id="@+id/coords"
+            app:layout_constraintTop_toTopOf="@+id/city"
+            app:layout_constraintBottom_toBottomOf="@+id/city"
+            android:textColor="@color/colorBlack"
+            android:textSize="14sp"
+            tools:text="14.88 228.0"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_margin="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:id="@+id/localTime"
+            app:layout_constraintTop_toBottomOf="@+id/city"
+            app:layout_constraintLeft_toLeftOf="@+id/city"
+            tools:text="22.01.96 22:00"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:id="@+id/timezoneName"
+            app:layout_constraintTop_toBottomOf="@+id/city"
+            app:layout_constraintLeft_toRightOf="@+id/localTime"
+            tools:text="UTC"
+            android:layout_marginStart="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <ImageView
+            android:src="@drawable/ic_brightness_medium_orange_a700_24dp"
+            app:layout_constraintLeft_toLeftOf="@+id/city"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/localTime"
+            android:id="@+id/weatherIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:contentDescription="@string/stub"/>
+
+    <TextView
+            android:id="@+id/weatherStateName"
+            app:layout_constraintTop_toTopOf="@+id/weatherIcon"
+            app:layout_constraintBottom_toBottomOf="@+id/weatherIcon"
+            app:layout_constraintLeft_toRightOf="@+id/weatherIcon"
+            tools:text="Badass weather"
+            android:layout_marginStart="8dp"
+            android:textColor="@color/colorBlack"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:id="@+id/weatherStateAbbr"
+            app:layout_constraintTop_toBottomOf="@+id/localTime"
+            app:layout_constraintBottom_toBottomOf="@+id/weatherIcon"
+            app:layout_constraintLeft_toRightOf="@+id/weatherStateName"
+            tools:text="BW"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="8dp"
+            android:textColor="@color/colorBlack"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <ImageView
+            android:src="@drawable/ic_brightness_medium_orange_a700_24dp"
+            app:layout_constraintLeft_toLeftOf="@+id/city"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/weatherIcon"
+            android:id="@+id/windIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:contentDescription="@string/stub"/>
+
+    <TextView
+            android:id="@+id/windSpeed"
+            app:layout_constraintTop_toTopOf="@+id/windIcon"
+            app:layout_constraintBottom_toBottomOf="@+id/windIcon"
+            app:layout_constraintLeft_toRightOf="@+id/windIcon"
+            tools:text="100500 kmh"
+            android:layout_marginStart="8dp"
+            android:textColor="@color/colorBlack"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:id="@+id/tempMin"
+            app:layout_constraintLeft_toLeftOf="@+id/city"
+            app:layout_constraintRight_toLeftOf="@+id/temp"
+            app:layout_constraintTop_toBottomOf="@+id/windIcon"
+            android:layout_marginTop="16dp"
+            android:textSize="24sp"
+            android:textColor="@color/colorBlack"
+            tools:text="15C*"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:id="@+id/temp"
+            app:layout_constraintLeft_toRightOf="@+id/tempMin"
+            app:layout_constraintRight_toLeftOf="@+id/tempMax"
+            app:layout_constraintTop_toBottomOf="@+id/windIcon"
+            android:layout_marginTop="16dp"
+            android:textSize="24sp"
+            android:textColor="@color/colorBlack"
+            tools:text="15C*"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:id="@+id/tempMax"
+            app:layout_constraintLeft_toRightOf="@+id/temp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/windIcon"
+            android:layout_marginTop="16dp"
+            android:textSize="24sp"
+            android:textColor="@color/colorBlack"
+            tools:text="15C*"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:id="@+id/airPressure"
+            app:layout_constraintLeft_toLeftOf="@+id/city"
+            app:layout_constraintRight_toLeftOf="@+id/humidity"
+            app:layout_constraintTop_toBottomOf="@+id/tempMin"
+            android:layout_marginTop="16dp"
+            android:textSize="24sp"
+            android:textColor="@color/colorBlack"
+            tools:text="15C*"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:id="@+id/humidity"
+            app:layout_constraintLeft_toRightOf="@+id/airPressure"
+            app:layout_constraintRight_toLeftOf="@+id/visibility"
+            app:layout_constraintTop_toBottomOf="@+id/temp"
+            android:layout_marginTop="16dp"
+            android:textSize="24sp"
+            android:textColor="@color/colorBlack"
+            tools:text="15C*"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:id="@+id/visibility"
+            app:layout_constraintLeft_toRightOf="@+id/humidity"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tempMax"
+            android:layout_marginTop="16dp"
+            android:textSize="24sp"
+            android:textColor="@color/colorBlack"
+            tools:text="15C*"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:id="@+id/source"
+            tools:text="Noname weather forecast"
+            app:layout_constraintTop_toBottomOf="@+id/airPressure"
+            android:layout_marginTop="16dp"
+            app:layout_constraintLeft_toLeftOf="@+id/city"
+            android:textColor="@color/colorBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+</android.support.constraint.ConstraintLayout>
