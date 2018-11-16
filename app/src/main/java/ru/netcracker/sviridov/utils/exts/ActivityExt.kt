@@ -1,4 +1,4 @@
-package ru.netcracker.sviridov.utils
+package ru.netcracker.sviridov.utils.exts
 
 import android.app.Activity
 import android.arch.lifecycle.ViewModel
@@ -12,14 +12,14 @@ import java.io.Serializable
 /**
  * Created by Turkin A. on 30/10/2018.
  */
-fun Activity.newIntent() = Intent()
+fun <A : Activity> A.newIntent() = Intent()
 
-fun <A : Activity> Activity.startActivity(target: Class<A>) {
+fun <A : Activity> A.startActivity(target: Class<A>) {
     val intent = Intent(this, target)
     this.startActivity(intent)
 }
 
-fun <A : Activity> Activity.startActivityForResult(
+fun <A : Activity> A.startActivityForResult(
     target: Class<A>,
     requestCode: Int
 ) {
@@ -27,7 +27,7 @@ fun <A : Activity> Activity.startActivityForResult(
     this.startActivityForResult(intent, requestCode)
 }
 
-fun <A : Activity, P : Parcelable> Activity.startActivityWithParcelables(
+fun <A : Activity, P : Parcelable> A.startActivityWithParcelables(
     target: Class<A>,
     parameters: Map<String, P>
 ) {
@@ -38,7 +38,7 @@ fun <A : Activity, P : Parcelable> Activity.startActivityWithParcelables(
     this.startActivity(intent)
 }
 
-fun <A : Activity, S : Serializable> Activity.startActivityWithSerializables(
+fun <A : Activity, S : Serializable> A.startActivityWithSerializables(
     target: Class<A>,
     parameters: Map<String, S>
 ) {
@@ -49,7 +49,7 @@ fun <A : Activity, S : Serializable> Activity.startActivityWithSerializables(
     this.startActivity(intent)
 }
 
-fun <A : Activity, P : Parcelable> Activity.startActivityForResultWithParcelables(
+fun <A : Activity, P : Parcelable> A.startActivityForResultWithParcelables(
     target: Class<A>,
     parameters: Map<String, P>,
     requestCode: Int
@@ -61,7 +61,7 @@ fun <A : Activity, P : Parcelable> Activity.startActivityForResultWithParcelable
     this.startActivityForResult(intent, requestCode)
 }
 
-fun <A : Activity, S : Serializable> Activity.startActivityForResultWithSerializables(
+fun <A : Activity, S : Serializable> A.startActivityForResultWithSerializables(
     target: Class<A>,
     parameters: Map<String, S>,
     requestCode: Int
@@ -73,5 +73,5 @@ fun <A : Activity, S : Serializable> Activity.startActivityForResultWithSerializ
     this.startActivityForResult(intent, requestCode)
 }
 
-fun <VM : ViewModel> FragmentActivity.createVM(viewModelTag: String, viewModelClass: Class<VM>) =
+fun <FA : FragmentActivity, VM : ViewModel> FA.createVM(viewModelTag: String, viewModelClass: Class<VM>) =
     ViewModelProviders.of(this).get(viewModelTag, viewModelClass)
